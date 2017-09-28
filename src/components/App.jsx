@@ -1,10 +1,10 @@
 import React from 'react';
-import DogDisplay from './DogDisplay';
+import Home from './Home';
 
 function App(props) {
   return (
     <div className="container">
-      <DogDisplay/>
+      <Home/>
     </div>
   );
 }
