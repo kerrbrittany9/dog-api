@@ -14,7 +14,6 @@ export const displayDog = (dog, dogId) => ({
 });
 
 export function fetchDog(dogSearch) {
-  console.log(types);
   return function (dispatch) {
     const dogId = v4();
     dispatch(requestDog(dogSearch, dogId));
@@ -24,7 +23,7 @@ export function fetchDog(dogSearch) {
       response => response.json(),
       error => console.log("An error occurred.", error)
     ).then(function(json) {
-      if (json.message > 0) {
+      if (json.status === "success") {
         const dog = json.message[0];
         dispatch(displayDog(dog, dogId));
       } else {

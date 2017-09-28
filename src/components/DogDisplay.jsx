@@ -7,6 +7,8 @@ const DogDisplay = ({ dispatch, dog })=> {
   return (
     <div>
       <DogSearch/>
+      <br/>
+      <img src={dog.dog}/>
     </div>
   );
 }
@@ -16,6 +18,7 @@ DogDisplay.propTypes = {
 };
 
 const mapStateToProps = state => {
+  console.log(state);
   const dog = state;
   return {
     dog: dog
