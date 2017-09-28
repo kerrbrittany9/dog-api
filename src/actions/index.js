@@ -1,11 +1,11 @@
 import * as types from './../constants/ActionTypes';
 import v4 from 'uuid/v4';
 
-export const requestDog = (dogSearch, dogId) => {(
+export const requestDog = (dogSearch, dogId) => ({
   type: types.REQUEST_DOG,
   dogSearch,
   dogId: dogId
-)};
+});
 
 export const displayDog = (dog, dogId) => ({
   type: types.DISPLAY_DOG,
@@ -14,6 +14,7 @@ export const displayDog = (dog, dogId) => ({
 });
 
 export function fetchDog(dogSearch) {
+  console.log(types);
   return function (dispatch) {
     const dogId = v4();
     dispatch(requestDog(dogSearch, dogId));

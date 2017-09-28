@@ -1,4 +1,5 @@
 import React from 'react';
+import { fetchDog } from './../actions';
 import { connect } from 'react-redux';
 
 class DogSearch extends React.Component {
@@ -9,13 +10,20 @@ class DogSearch extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
+    let { _dogSearch } = this.refs;
+    console.log(_dogSearch.value);
+    if(!_dogSearch.value.trim()) {
+      return;
+    }
+    this.props.dispatch(fetchDog(_dogSearch.value.trim()));
+    _dogSearch.value = "";
   }
 
   render() {
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
-          <input placeholder="Put dog here" ref="_dog"></input>
+          <input placeholder="Put dog here" ref="_dogSearch"></input>
           <button>Submit</button>
         </form>
       </div>

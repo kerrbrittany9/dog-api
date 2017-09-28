@@ -1,5 +1,6 @@
 import constants from "./../constants";
-import { defaultState, types } = constants;
+
+const { defaultState, types } = constants;
 
 const dogsById = (state = defaultState, action) => {
   let dog;
@@ -19,7 +20,7 @@ const dogsById = (state = defaultState, action) => {
       dog = state[action.dogId];
       newDog = Object.assign({}, dog, {
         isFetching: false,
-        dog: action.dog.
+        dog: action.dog,
         dogId: action.dogId
       });
       return newDog;
