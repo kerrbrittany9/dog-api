@@ -16,9 +16,15 @@ export const displayDog = (dog, dogId) => ({
 export function fetchDog(dogSearch) {
   return function (dispatch) {
     const dogId = v4();
+    let dogSearchReverse;
+    let dogSearchSlash;
+    let dogSearchJoin;
+
     dispatch(requestDog(dogSearch, dogId));
-    // dogSearch = dogSearch.replace(" ", "/");
-    return fetch("https://dog.ceo/api/breed/" + dogSearch + "/images")
+    dogSearch = dogSearch.split(" ");
+    dogSearchReverse = dogSearch.reverse();
+    dogSearchSlash = dogSearchReverse.join("/");
+    return fetch("https://dog.ceo/api/breed/" + dogSearchSlash + "/images")
     .then(
       response => response.json(),
       error => console.log("An error occurred.", error)
@@ -27,7 +33,7 @@ export function fetchDog(dogSearch) {
         const dog = json.message[0];
         dispatch(displayDog(dog, dogId));
       } else {
-        const dog = "No dogs found";
+        const dog = "https://i.pinimg.com/736x/90/28/c8/9028c873956c39dbc6f7c9049e3c6fed--puppy-dog-eyes-error.jpg";
         dispatch(displayDog(dog, dogId));
       }
     });

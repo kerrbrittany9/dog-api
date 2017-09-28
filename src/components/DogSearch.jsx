@@ -11,7 +11,6 @@ class DogSearch extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     let { _dogSearch } = this.refs;
-    console.log(_dogSearch.value);
     if(!_dogSearch.value.trim()) {
       return;
     }
