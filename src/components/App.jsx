@@ -3,7 +3,7 @@ import DogDisplay from './DogDisplay';
 
 function App(props) {
   return (
-    <div>
+    <div className="container">
       <DogDisplay/>
     </div>
   );
