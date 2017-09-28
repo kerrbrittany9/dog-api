@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { fetchDog } from './../actions';
 import { connect } from 'react-redux';
 

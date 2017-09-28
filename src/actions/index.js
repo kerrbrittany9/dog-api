@@ -36,7 +36,7 @@ export function fetchDog(dogSearch) {
         dispatch(displayDog(dog, dogSearch, dogId));
       } else {
         const dog = "https://i.pinimg.com/736x/90/28/c8/9028c873956c39dbc6f7c9049e3c6fed--puppy-dog-eyes-error.jpg";
-        dispatch(displayDog(dog, dogId));
+        dispatch(displayDog(dog, dogSearch, dogId));
       }
     });
   };
