@@ -1,9 +1,10 @@
 import React from 'react';
+import DogDisplay from './DogDisplay';
 
 function App(props) {
   return (
     <div>
-      <p>Hi</p>
+      <DogDisplay/>
     </div>
   );
 }
