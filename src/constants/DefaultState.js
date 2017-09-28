@@ -1,5 +1,6 @@
 export const defaultState = {
   isFetching: false,
-  dog: "poodle",
+  dogSearch: "poodle",
+  dog: "poodle image",
   dogId: 0
 }

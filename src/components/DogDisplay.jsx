@@ -1,21 +1,19 @@
 import React from 'react';
 import DogSearch from './DogSearch';
 import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
+
 
 const DogDisplay = ({ dispatch, dog })=> {
   return (
     <div>
       <DogSearch/>
       <br/>
+      <p>Your results for {dog.dogSearch}</p>
       <img src={dog.dog}/>
     </div>
   );
 }
 
-DogDisplay.propTypes = {
-  dog: PropTypes.object
-};
 
 const mapStateToProps = state => {
   console.log(state);

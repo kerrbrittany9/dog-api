@@ -20,6 +20,7 @@ const dogsById = (state = defaultState, action) => {
       dog = state[action.dogId];
       newDog = Object.assign({}, dog, {
         isFetching: false,
+        dogSearch: action.dogSearch,
         dog: action.dog,
         dogId: action.dogId
       });
